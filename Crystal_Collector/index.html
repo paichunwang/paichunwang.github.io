@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Crystal Collector Game Using JavaScript</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    
+    <div class="row">
+        <div class="col-sm-4" style="background-color: orange">
+            <h1>CrystalsCollector!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="background-color: lightgoldenrodyellow">
+            <p>You will be given a random number at the start of the game</p>
+            <p>There are four crystal below. By clicking on a crystal you will add a specific amount of points to your total
+                score.
+            </p>
+            <p>You win the game by matching your total score to random number, you lose the gmae if your total score goes above
+                the random number.</p>
+            <p>The value of each crystal is hidden from you until you click on it.</p>
+            <p>Each time when the game starts, the game will change the values of each crystal.</p>
+
+        </div>
+        <div class="col-sm-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: green; height: 60px;">
+            <p id="scoreGoal">0</p>
+        </div>
+        <div class="col-sm-2" style="background-color: turquoise">
+            <p id="win">Win: 0</p>
+            <p id="lost">Losses: 0</p>
+        </div>
+        <div class="col-sm-7">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <img src="../Crystal_Collector/assets/images/red.png" id="red">
+            <img src="../Crystal_Collector/assets/images/blue.png" id="blue">
+            <img src="../Crystal_Collector/assets/images/yellow.png" id="yellow">
+            <img src="../Crystal_Collector/assets/images/green.png" id="green">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: darkgreen"><p>Your total score is: </p></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4" style="background-color: darkgreen"><p id="currentScoreCount">0</p></div>
+    </div>
+
+
+
+</body>
+
+</html>

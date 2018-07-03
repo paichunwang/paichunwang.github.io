@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Pokemon RPG Game</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="row">
+        <div class="col-sm-3">
+            <audio controls id="player">
+                <source src="../RPG_Game/assets/sound/102-palette town theme.mp3" type="audio/mpeg" />
+            </audio>
+        </div>
+        <div class="col-sm-6" style="background-color: red">
+            <img src="../RPG_Game/assets/images/pokemon-logo-png-file-pokemon-logo-png-500.png" width="100%">
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="pokemon" style="background-color: lightgoldenrodyellow; height: 150px">
+            <!-- <img src="../RPG_Game/assets/images/001.png">
+                <img src="../RPG_Game/assets/images/004.png">
+                <img src="../RPG_Game/assets/images/007.png">
+                <img src="../RPG_Game/assets/images/010.png">
+                <img src="../RPG_Game/assets/images/019.png"> -->
+            <img src="../RPG_Game/assets/images/pokeball.png" class="clickElement" id="1" value="1">
+            <img src="../RPG_Game/assets/images/pokeball.png" class="clickElement" id="4" value="2">
+            <img src="../RPG_Game/assets/images/pokeball.png" class="clickElement" id="7" value="3">
+            <!-- <img src="../RPG_Game/assets/images/pokeball.png" id="10" value="4">
+                <img src="../RPG_Game/assets/images/pokeball.png" id="19" value="5"> -->
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="chosen" style="background-color: red; height: 50px"></div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="enemy" style="background-color: lightgoldenrodyellow; height: 150px">
+            <img scr="" height="100%">
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6" id="action" style="background-color: red; height: 50px"></div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+
+</body>
+
+</html>
