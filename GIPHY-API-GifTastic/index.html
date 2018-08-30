@@ -1,0 +1,104 @@
+<!-- //API KEY: TKQuPboqEK6BDv72pXGsSi0KeDwa9R7M -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Favorite Movies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div id="button"></div>
+    <div>
+        <input type="text" name="FirstName" value="Search..." id="sub" onfocus="this.value=''">
+        <button id="searchfor">SEARCH</button>
+        <button id="addTen">Show Me More!</button>
+        <div id="images"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            console.log("Document Load")
+
+            var topics = ["superman", "batman", "wolverine", "deadpool", "wonder woman", "iron man", "spider-man", "thor", "aquaman", "daredevil"];
+            var stills; //variable holder for true/false for determining still gif or animate.
+
+//* REPLACE ME IF API KEY STOP WORKING ****************************
+            var APIKey = 'TKQuPboqEK6BDv72pXGsSi0KeDwa9R7M';
+//* REPLACE ME IF API KEY STOP WORKING ****************************
+
+            $('body').on('click', '.listButton', function () {
+                var x = $(this).val();
+                // console.log("What button was clicked: " + x) // checking what button was pressed
+                var queryURL = `https://api.giphy.com/v1/gifs/search?q=${x}&api_key=${APIKey}&limit=20`;
+
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).then(function (response) {
+                    //console.log(response) // check the response data param
+                    callImage(response)
+                });
+            });
+
+            $('body').on('click', 'img', function () {
+                var stop = $(this).attr("data-stop");
+                var start = $(this).attr("data-start");
+                var condition = $(this).attr("data-state") //true for stills false for moving
+                // console.log("img clicked") // checking conditional run
+                if (condition === "true") {
+                    $(this).attr("src", start);
+                    $(this).attr("data-state", "false");
+                    // console.log("if clicked") //checking for if statement run
+                } else {
+                    $(this).attr("src", stop);
+                    $(this).attr("data-state", "true");
+                    // console.log("else clicked") //checking for else statement run
+                }
+            });
+
+            $("#searchfor").on("click", function (event) {
+                event.preventDefault();
+                var a = $("#sub").val().trim()
+                topics.push(a)
+                console.log(topics)
+                createButton()
+            });
+
+            $("#addTen").click(function () {
+                $("div").css("display", "") //change div display to show the div that was already created but "hidden"
+            });
+
+            function callImage(response) {
+                $("#images").empty()
+                // console.log(response)
+                for (i = 0; i < response.data.length; i++) {
+                    //console.log("Title of gif images: " + response.data[i].title) // check what title and image was used
+                    var stills = response.data[i].images.downsized_still.url
+                    var animated = response.data[i].images.downsized_medium.url
+                    var info = response.data[i].title + " Rating:" + response.data[i].rating
+                    // console.log(stills)
+                    // console.log(animated)
+
+                    if (i < 10) {
+                        $("#images").append(`<div><img src="${stills}" data-stop="${stills}" data-start="${animated}" data-state="true"><figcaption>&nbsp&nbsp&nbsp&nbsp${info}</figcaption><br><br></div>`) //downsized_medium for animated
+                    } else {
+                        $("#images").append(`<div id="hidden" style="display: none"><img src="${stills}" data-stop="${stills}" data-start="${animated}" data-state="true"><figcaption>&nbsp&nbsp&nbsp&nbsp${info}</figcaption><br><br></div>`) //downsized_medium for animated
+                        console.log("hidden placed")
+                    }
+                }
+            }
+
+            function createButton(button) {
+                $("#button").empty()
+                for (i = 0; i < topics.length; i++) {
+                    $("#button").append(`<button type="button" class="listButton" id="${topics[i]}" value="${topics[i]}">${topics[i]}</button>&nbsp&nbsp`);
+                }
+            }
+
+            createButton()
+
+        </script>
+</body>
+
+</html>
