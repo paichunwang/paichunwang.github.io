@@ -1,0 +1,50 @@
+div.row{
+    border: 1px;
+    border-color: aqua;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+table {
+    table-layout:fixed;
+    width: 100%;
+}
+
+th{
+    font-weight: bold;
+}
+
+tr{
+    border-bottom: 1px solid lightgray;
+}
+
+form div, input[type="text"]{
+    margin: 3px 0px;
+    font-weight: bold;
+}
+
+input{
+    width: 300px;
+}
+
+div.head{
+    height: 100px;
+}
+
+div.schedule{
+    height: 300px;
+}
+
+div.input{
+    height: 100%;
+}
+
+body{
+    background-image: url("../images/background.jpg");
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center bottom;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100%;
+}
